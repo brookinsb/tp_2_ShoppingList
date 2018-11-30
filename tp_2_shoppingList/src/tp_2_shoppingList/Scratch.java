@@ -1,4 +1,6 @@
 package tp_2_shoppingList;
+import java.util.Scanner;
+
 
 import edu.princeton.cs.introcs.StdOut;
 
