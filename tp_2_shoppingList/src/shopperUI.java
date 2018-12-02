@@ -1,4 +1,4 @@
-package tp_2_shoppingList;
+
 import java.util.Scanner;
 
 
