@@ -20,7 +20,7 @@ public class shoppingList {
 			ArrayList<String> tmp = new ArrayList<String>();
 			tmp.add("test1");
 			tmp.add("test2");
-			YamlWriter writer = new YamlWriter(new FileWriter("output.yml"));
+			YamlWriter writer = new YamlWriter(new FileWriter("MyRecipes.yml"));
 			
 			writer.write(newRecipe);
 			writer.write(tmp);
