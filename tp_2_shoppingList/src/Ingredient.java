@@ -1,9 +1,9 @@
 
 public class Ingredient {
 
-	String mName;
-	double mAmount;
-	String mUnit;
+	public String mName;
+	public double mAmount;
+	public String mUnit;
 	
 	public Ingredient() {
 	}
@@ -33,5 +33,9 @@ public class Ingredient {
 		this.mUnit = unit;
 	}
 	
+	@Override
+	public String toString() {
+		return "Ingredient info";
+	}
 	
 }
