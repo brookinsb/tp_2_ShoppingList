@@ -11,34 +11,43 @@ public class shoppingList {
 
 	public static void main(String[] args)
 	{
-		StdOut.print("Hello");
-		ArrayList<Recipe> recipeList = new ArrayList<>();
-
+		boolean done = false;
+		IShopperUI ui = new ShopperUI();
 		
-		Recipe newRecipe = new Recipe("Lasagna");
-		newRecipe.addIngredient(new Ingredient("Thyme", 1, "teaspoon"));
-		newRecipe.addIngredient(new Ingredient("Diced Tomatoes", 1, "Can"));
-		recipeList.add(newRecipe);
+		ui.displayGreeting();
 		
-		newRecipe = new Recipe("Banana Bread");
-		newRecipe.addIngredient(new Ingredient("Banana", 3, "Each"));
-		newRecipe.addIngredient(new Ingredient("Flour", 1, "Cup"));
-		newRecipe.addIngredient(new Ingredient("Sugar", 0.5, "Cup"));
-		recipeList.add(newRecipe);
-
-		
-		
-		
-		try {
-			YamlReader reader = new YamlReader(new FileReader("MyRecipes.yml"));
+		while (!done) {
+			ui.displayMenuOptions();
+			int task = ui.getMenuOption();
 			
-			recipeList = (ArrayList<Recipe>)reader.read();
-			StdOut.println(recipeList.toString());
+			switch (task) {
+			case 1:
+				MealCollector mealCollector = new MealCollector();
+				
+				break;
+				
+			case 9:
+				done = true;
+				break;
+
+			default:
+				ui.displayInvalidMenuOption();
+				break;
+			}
 			
 		}
-		catch(Exception e) {
-			StdOut.println("exception" + e);
-		}
+		// Request 
+		
+//		try {
+//			YamlReader reader = new YamlReader(new FileReader("MyRecipes.yml"));
+//			
+//			recipeList = (ArrayList<Recipe>)reader.read();
+//			StdOut.println(recipeList.toString());
+//			
+//		}
+//		catch(Exception e) {
+//			StdOut.println("exception" + e);
+//		}
 	}
 
 }
