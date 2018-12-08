@@ -6,6 +6,7 @@ public class Recipe {
 	public ArrayList<Ingredient> mIngredients;
 	
 	public Recipe() {
+		this("");
 	}
 
 	public Recipe(String name) {
@@ -13,7 +14,7 @@ public class Recipe {
 		mIngredients = new ArrayList<>();
 	}
 
-	public String getmName() {
+	public String getName() {
 		return mName;
 	}
 
@@ -25,10 +26,6 @@ public class Recipe {
 		return mIngredients;
 	}
 
-	public void setIngredients(ArrayList<Ingredient> ingredients) {
-		this.mIngredients = ingredients;
-	}
-	
 	public void addIngredient(Ingredient ingredient) {
 		mIngredients.add(ingredient);
 	}

@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -24,13 +25,16 @@ public class shoppingList {
 		newRecipe.addIngredient(new Ingredient("Flour", 1, "Cup"));
 		newRecipe.addIngredient(new Ingredient("Sugar", 0.5, "Cup"));
 		recipeList.add(newRecipe);
+
+		
 		
 		
 		try {
-			YamlWriter writer = new YamlWriter(new FileWriter("MyRecipes.yml"));
+			YamlReader reader = new YamlReader(new FileReader("MyRecipes.yml"));
 			
-			writer.write(recipeList);
- 			writer.close();	
+			recipeList = (ArrayList<Recipe>)reader.read();
+			StdOut.println(recipeList.toString());
+			
 		}
 		catch(Exception e) {
 			StdOut.println("exception" + e);
