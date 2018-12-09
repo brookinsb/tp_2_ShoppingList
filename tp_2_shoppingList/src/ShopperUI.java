@@ -116,6 +116,12 @@ public class ShopperUI implements IShopperUI
 	public int getRecipeNumber() {
 		StdOut.println(">>");
 		return scanner.nextInt();
+	}
+
+	@Override
+	public void displayIOError() {
+		// TODO Auto-generated method stub
+		
 	}	
 	
 	

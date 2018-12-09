@@ -5,6 +5,7 @@ public class MealPlanner {
 	{
 		boolean done = false;
 		IShopperUI ui = new ShopperUI();
+		MealPrepper mealPrepper = new MealPrepper(ui);
 		
 		ui.displayGreeting();
 		
@@ -19,12 +20,21 @@ public class MealPlanner {
 				break;
 				
 			case 2:
-				MealPrepper mealPrepper = new MealPrepper(ui);
 				mealPrepper.selectRecipes();
 				break;
 
 			case 3:
 				ShoppingList sl = new ShoppingList();
+				if (mealPrepper.listMade()) {
+					try {
+						mealPrepper.writeShoppingList();
+						
+					} catch (Exception e) {
+						ui.displayIOError();
+					}
+				} else {
+
+				}
 				break;
 				
 			case 9:

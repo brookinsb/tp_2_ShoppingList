@@ -27,4 +27,6 @@ public interface IShopperUI {
 	void requestRecipesForDay(int day);
 	
 	int getRecipeNumber();
+
+	void displayIOError();
 }
