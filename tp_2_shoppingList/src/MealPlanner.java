@@ -1,5 +1,5 @@
 
-public class shoppingList {
+public class MealPlanner {
 
 	public static void main(String[] args)
 	{
@@ -22,6 +22,10 @@ public class shoppingList {
 				MealPrepper mealPrepper = new MealPrepper(ui);
 				mealPrepper.selectRecipes();
 				break;
+
+			case 3:
+				ShoppingList sl = new ShoppingList();
+				break;
 				
 			case 9:
 				done = true;
@@ -33,18 +37,6 @@ public class shoppingList {
 			}
 			
 		}
-		// Request 
-		
-//		try {
-//			YamlReader reader = new YamlReader(new FileReader("MyRecipes.yml"));
-//			
-//			recipeList = (ArrayList<Recipe>)reader.read();
-//			StdOut.println(recipeList.toString());
-//			
-//		}
-//		catch(Exception e) {
-//			StdOut.println("exception" + e);
-//		}
 	}
 
 }

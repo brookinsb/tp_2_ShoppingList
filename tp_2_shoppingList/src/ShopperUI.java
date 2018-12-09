@@ -23,6 +23,7 @@ public class ShopperUI implements IShopperUI
 		StdOut.println("Select an task:\r\n");
 		StdOut.println("1 - Enter a new Recipe.");
 		StdOut.println("2 - Plan meals.");
+		StdOut.println("3 - Create list");
 		StdOut.println("9 - Done.");
 		
 	}
