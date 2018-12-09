@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Recipe {
+public class Recipe implements Comparable<Recipe> {
 
 	public String mName;
 	public ArrayList<Ingredient> mIngredients;
@@ -35,6 +36,11 @@ public class Recipe {
 		return "recipe_name: " + mName;
 		
 		
+	}
+
+	@Override
+	public int compareTo(Recipe o) {
+		return getName().compareTo(o.getName());
 	}
 
 }

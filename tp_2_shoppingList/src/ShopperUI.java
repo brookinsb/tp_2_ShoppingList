@@ -68,7 +68,6 @@ public class ShopperUI implements IShopperUI
 		String input;
 		
 		StdOut.print(">> ");
-//		input = StdIn.readLine();
 		input = scanner.nextLine();
 		StdOut.println("\r\n");
 		return input;

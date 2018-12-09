@@ -18,7 +18,6 @@ public class MealCollector
 		
 		recipeList = rs.read();
 		
-	StdOut.println(recipeList.toString());
 	}
 
 	public void addRecipe() {
@@ -57,7 +56,7 @@ public class MealCollector
 				}
 				else {
 					recipeList.add(newRecipe);
-//					Collections.sort(recipeList, );
+					Collections.sort(recipeList);
 					rs.write(recipeList);
 					done = true;
 				}
