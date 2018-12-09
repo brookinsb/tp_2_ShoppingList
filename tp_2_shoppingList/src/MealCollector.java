@@ -8,6 +8,8 @@ public class MealCollector
 	private ArrayList<Recipe> recipeList;
 	private IShopperUI ui;
 	private RecipeStorage rs;
+	private static String delim = "[-]+";
+
 	
 	public MealCollector(IShopperUI ui) {
 		this.ui = ui;
@@ -28,7 +30,7 @@ public class MealCollector
 		
 		while (!validName) {
 			ui.requestRecipeName();
-			recipeName = ui.getRecipeName();
+			recipeName = ui.getString();
 			if (!recipeName.isEmpty()) {
 				validName = true;
 			}
@@ -37,16 +39,17 @@ public class MealCollector
 		Recipe newRecipe = new Recipe(recipeName);
 
 		while(!done) {
-			ui.requestIngredientName();;
+			ui.requestIngredientName();
 			ingredientName = ui.getString();
 			if (!ingredientName.isEmpty()) {
 				validName = true;
 				if (!ingredientName.equals("0")) {
-					String delim = "[/]+";
 					ui.requestIngredientAmount();
 					amountString = ui.getString();
 					String[] tokens = amountString.split(delim);
-					double amount = Double.parseDouble(tokens[0]);
+					
+					double amount = getAmoutValue(tokens[0]);
+					
 					String units = tokens[1];
 					newRecipe.addIngredient(new Ingredient(ingredientName,
 															amount,
@@ -62,5 +65,24 @@ public class MealCollector
 		
 			
 		}
+	}
+
+	private double getAmoutValue(String amountString) {
+		int intValue = 0;
+		double returnValue;
+		if (amountString.contains(" ")) {
+			intValue = Integer.parseInt(amountString.split("[ ]+")[0]);
+			amountString = amountString.split("[ ]+")[1];
+		}
+		
+		if (amountString.contains("/")) {
+			String[] fractionValues = amountString.split("[/]+");
+			double numerator = Double.parseDouble(fractionValues[0]);
+			double denumerator = Double.parseDouble(fractionValues[1]);
+			returnValue = intValue + (numerator/denumerator);
+		} else {
+			returnValue = Double.parseDouble(amountString);
+		}
+		return returnValue;
 	}
 }

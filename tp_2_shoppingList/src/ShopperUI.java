@@ -1,10 +1,14 @@
 
+import java.util.Scanner;
+
 import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 
 public class ShopperUI implements IShopperUI
 {
 
+	Scanner scanner = new Scanner(System.in);
+	
 	@Override
 	public void displayGreeting() {
 		StdOut.println("Hello.  Welcome to Meal Planner.\r\n");
@@ -64,7 +68,8 @@ public class ShopperUI implements IShopperUI
 		String input;
 		
 		StdOut.print(">> ");
-		input = StdIn.readString();
+//		input = StdIn.readLine();
+		input = scanner.nextLine();
 		StdOut.println("\r\n");
 		return input;
 	}
@@ -73,8 +78,8 @@ public class ShopperUI implements IShopperUI
 	public void requestIngredientAmount() {
 		StdOut.println("____________________\r\n");
 		StdOut.println("Enter the ingredient amount.");
-		StdOut.println("Enter value/unit.");
-		StdOut.println("For example \'1/cup\'");
+		StdOut.println("Enter value-unit.");
+		StdOut.println("For example \'1-cup\'");
 	}	
 	
 	
