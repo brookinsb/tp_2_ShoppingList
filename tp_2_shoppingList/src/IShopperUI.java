@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public interface IShopperUI {
 
@@ -18,4 +19,12 @@ public interface IShopperUI {
 	String getString();
 	
 	void requestIngredientAmount();
+	
+	void requestWeekStartingDay();
+	
+	void displayRecipeName(ArrayList<Recipe> recipeList);
+	
+	void requestRecipesForDay(int day);
+	
+	int getRecipeNumber();
 }

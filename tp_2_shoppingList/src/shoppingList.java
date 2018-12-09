@@ -18,6 +18,11 @@ public class shoppingList {
 				mealCollector.addRecipe();
 				break;
 				
+			case 2:
+				MealPrepper mealPrepper = new MealPrepper(ui);
+				mealPrepper.selectRecipes();
+				break;
+				
 			case 9:
 				done = true;
 				break;
