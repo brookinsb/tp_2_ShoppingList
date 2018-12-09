@@ -74,7 +74,7 @@ public class ShopperUI implements IShopperUI
 		StdOut.println("____________________\r\n");
 		StdOut.println("Enter the ingredient amount.");
 		StdOut.println("Enter value/unit.");
-		StdOut.println("For example \'1 cup\'");
+		StdOut.println("For example \'1/cup\'");
 	}	
 	
 	
