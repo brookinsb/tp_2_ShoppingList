@@ -8,4 +8,14 @@ public interface IShopperUI {
 	int getMenuOption();
 	
 	void displayInvalidMenuOption();
+	
+	void requestRecipeName();
+	
+	String getRecipeName();
+	
+	void requestIngredientName();
+	
+	String getString();
+	
+	void requestIngredientAmount();
 }

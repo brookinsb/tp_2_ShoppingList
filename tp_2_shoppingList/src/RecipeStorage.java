@@ -1,9 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-import com.esotericsoftware.yamlbeans.YamlException;
-import com.esotericsoftware.yamlbeans.YamlReader;
-import com.esotericsoftware.yamlbeans.YamlWriter;
+import com.esotericsoftware.yamlbeans.*;
 
 import edu.princeton.cs.introcs.StdOut;
 
@@ -22,7 +20,6 @@ public class RecipeStorage {
 			YamlReader yamlReader = new YamlReader(new FileReader(mFileName));
 			
 			recipeList = (ArrayList<Recipe>)yamlReader.read();
-			StdOut.println(recipeList.toString());			
 		}
 		catch(IOException e) {
 			StdOut.println("exception" + e);

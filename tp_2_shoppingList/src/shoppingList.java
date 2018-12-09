@@ -1,11 +1,3 @@
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.ArrayList;
-
-import com.esotericsoftware.yamlbeans.*;
-
-import edu.princeton.cs.introcs.*;
-
 
 public class shoppingList {
 
@@ -22,8 +14,8 @@ public class shoppingList {
 			
 			switch (task) {
 			case 1:
-				MealCollector mealCollector = new MealCollector();
-				
+				MealCollector mealCollector = new MealCollector(ui);
+				mealCollector.addRecipe();
 				break;
 				
 			case 9:
