@@ -120,7 +120,8 @@ public class ShopperUI implements IShopperUI
 
 	@Override
 	public void displayIOError() {
-		// TODO Auto-generated method stub
+		StdOut.println("*******************");
+		StdOut.println("IO Exception");
 		
 	}	
 	

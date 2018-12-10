@@ -41,10 +41,10 @@ public class MealPrepper
 			ui.displayRecipeName(recipeList);
 			ui.requestRecipesForDay(day);
 			
-			int recipeNumber = 1;
+			int recipeNumber = ui.getRecipeNumber();
 			while (recipeNumber !=0) {
+				dayRecipeNumbers.add(recipeNumber-1);
 				recipeNumber = ui.getRecipeNumber();
-				dayRecipeNumbers.add(recipeNumber);
 			}
 			
 			weekRecipes[day-1] = dayRecipeNumbers;
@@ -84,12 +84,11 @@ public class MealPrepper
 			ArrayList<Integer> dayList = weekRecipes[day-1];
 			
 			printDayHeader(printWriter, day);
-
-//			int recipeNumber = 1;
-//			while (recipeNumber !=0) {
-//				recipeNumber = ui.getRecipeNumber();
-//				weekRecipes[day].add(recipeNumber);
-//			}
+			for (Integer recipeIndex : dayList) {
+				printWriter.println("   " + recipeList.get(recipeIndex).getName());
+				
+			}
+			printWriter.println();
 			
 			day = (day+1)==8 ? 1 : day+1; 
 			
@@ -108,7 +107,7 @@ public class MealPrepper
 	
 	private void printDayHeader(PrintWriter pw, int day) {
 		String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-		pw.println("---------------------");
+		pw.println("*********************");
 		pw.printf("%s meals\r\n", days[day-1]);
 		pw.println("---------------------");
 		
