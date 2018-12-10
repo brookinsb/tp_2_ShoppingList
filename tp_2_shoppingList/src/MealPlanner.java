@@ -24,7 +24,6 @@ public class MealPlanner {
 				break;
 
 			case 3:
-				ShoppingList sl = new ShoppingList();
 				if (mealPrepper.listMade()) {
 					try {
 						mealPrepper.writeShoppingList();
