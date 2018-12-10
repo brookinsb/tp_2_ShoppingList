@@ -72,6 +72,7 @@ public class MealPrepper
 	
 	public void writeShoppingList() throws IOException {
 		ShoppingList sl = new ShoppingList();
+		ArrayList<Ingredient> shoppingList = new ArrayList<>();
 		boolean done;
 		
 	    FileWriter fileWriter = new FileWriter("MealPlanner.txt");
@@ -85,7 +86,9 @@ public class MealPrepper
 			
 			printDayHeader(printWriter, day);
 			for (Integer recipeIndex : dayList) {
-				printWriter.println("   " + recipeList.get(recipeIndex).getName());
+				Recipe recipe = recipeList.get(recipeIndex);
+				printWriter.println("   " + recipe.getName());
+				shoppingList.addAll(recipe.getIngredients());
 				
 			}
 			printWriter.println();
@@ -95,10 +98,18 @@ public class MealPrepper
 			if (day == startingDayOfWeek) {
 				done = true;
 			}
-
 	    
 		}
-	    
+
+		printWriter.print("\r\n\r\n\r\n");
+		printWriter.println("------------------------------------");
+		printWriter.println("Shopping List\r\n");
+		for (Ingredient ingrd : shoppingList) {
+			printWriter.printf("   %-25s, %-2.2f, %s\r\n", ingrd.getName(), 
+														   ingrd.getAmount(), 
+														   ingrd.getUnit());
+		}
+
 	    printWriter.flush();
 	    printWriter.close();
 
