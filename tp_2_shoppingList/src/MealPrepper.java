@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import edu.princeton.cs.introcs.StdOut;
 
@@ -101,11 +102,13 @@ public class MealPrepper
 	    
 		}
 
+		Collections.sort(shoppingList);
+		
 		printWriter.print("\r\n\r\n\r\n");
 		printWriter.println("------------------------------------");
 		printWriter.println("Shopping List\r\n");
 		for (Ingredient ingrd : shoppingList) {
-			printWriter.printf("   %-25s, %-2.2f, %s\r\n", ingrd.getName(), 
+			printWriter.printf("   %-25s %-2.2f, %s\r\n", ingrd.getName(), 
 														   ingrd.getAmount(), 
 														   ingrd.getUnit());
 		}

@@ -1,5 +1,5 @@
 
-public class Ingredient {
+public class Ingredient implements Comparable<Ingredient> {
 
 	public String mName;
 	public double mAmount;
@@ -36,6 +36,11 @@ public class Ingredient {
 	@Override
 	public String toString() {
 		return "Ingredient info";
+	}
+
+	@Override
+	public int compareTo(Ingredient o) {
+		return getName().compareTo(o.getName());
 	}
 	
 }
