@@ -58,4 +58,19 @@ public class RecipeTest {
 		assertEquals(0, recipe.getIngredients().size());
 	}
 
+	@Test
+	public void compare_recipe_test() {
+		Recipe recipe1 = new Recipe("Taco Salad");
+		Recipe recipe2 = new Recipe("Banana Bread");
+		
+		assertTrue(recipe1.compareTo(recipe2) > 0);
+	}
+
+	@Test
+	public void recipe_string_test() {
+		Recipe recipe = new Recipe("Toast");
+		
+		assertEquals("Toast", recipe.toString());
+	}
+
 }

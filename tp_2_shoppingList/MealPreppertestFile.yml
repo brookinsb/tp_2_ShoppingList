@@ -1,0 +1,42 @@
+- !Recipe
+   mIngredients: 
+   - !Ingredient
+      mAmount: 1.0
+      mName: Thyme
+      mUnit: teaspoon
+   - !Ingredient
+      mAmount: 1.0
+      mName: Diced Tomatoes
+      mUnit: Can
+   mName: Lasagna
+- !Recipe
+   mIngredients: 
+   - !Ingredient
+      mAmount: 3.0
+      mName: Banana
+      mUnit: Each
+   - !Ingredient
+      mAmount: 1.0
+      mName: Flour
+      mUnit: Cup
+   - !Ingredient
+      mAmount: 0.5
+      mName: Sugar
+      mUnit: Cup
+   mName: Banana Bread
+- !Recipe
+   mIngredients: 
+   - !Ingredient
+      mAmount: 2.0
+      mName: Tomatos
+      mUnit: Cans
+   - !Ingredient
+      mAmount: 1.0
+      mName: Flour
+      mUnit: Cup
+   - !Ingredient
+      mAmount: 0.5
+      mName: Onion
+      mUnit: Cup
+   mName: Chili
+ 

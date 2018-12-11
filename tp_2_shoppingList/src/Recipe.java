@@ -33,7 +33,7 @@ public class Recipe implements Comparable<Recipe> {
 	
 	@Override
 	public String toString() {
-		return "recipe_name: " + mName;
+		return mName;
 		
 		
 	}

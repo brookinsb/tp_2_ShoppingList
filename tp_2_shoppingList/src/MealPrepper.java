@@ -13,12 +13,13 @@ public class MealPrepper
 	private RecipeStorage rs;
 	private ArrayList<Integer>[] weekRecipes = new ArrayList[7]; 
 	private int startingDayOfWeek;
+	private boolean weekListMade = false;
 
 	
-	public MealPrepper(IShopperUI ui) {
+	public MealPrepper(IShopperUI ui, String fileName) {
 		this.ui = ui;
 		
-		rs = new RecipeStorage("MyRecipes.yml");
+		rs = new RecipeStorage(fileName);
 		
 		recipeList = rs.read();
 		
@@ -54,6 +55,7 @@ public class MealPrepper
 			
 			if (day == startingDayOfWeek) {
 				done = true;
+				weekListMade = true;
 			}
 		}
 
@@ -129,6 +131,6 @@ public class MealPrepper
 
 
 	public boolean listMade() {
-		return weekRecipes.length != 0;
+		return weekListMade;
 	}
 }

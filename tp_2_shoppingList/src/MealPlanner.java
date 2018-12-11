@@ -5,7 +5,7 @@ public class MealPlanner {
 	{
 		boolean done = false;
 		IShopperUI ui = new ShopperUI();
-		MealPrepper mealPrepper = new MealPrepper(ui);
+		MealPrepper mealPrepper = new MealPrepper(ui, "MyRecipes.yml");
 		
 		ui.displayGreeting();
 		

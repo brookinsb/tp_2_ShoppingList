@@ -35,7 +35,7 @@ public class Ingredient implements Comparable<Ingredient> {
 	
 	@Override
 	public String toString() {
-		return "Ingredient info";
+		return mName + ", " + mAmount + ", " + mUnit;
 	}
 
 	@Override
