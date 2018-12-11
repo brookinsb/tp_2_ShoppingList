@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
@@ -51,6 +52,22 @@ class RecipeStorageTest {
 		recipeListFromFile = storage.read();
 		
 		assertEquals(2, recipeListFromFile.size());
+
+	}
+
+	@Test
+	void add_new_file_test() {
+		File file = new File("testFile.yml");
+		if(file.exists()) {
+			file.delete();
+		}
+		RecipeStorage storage = new RecipeStorage("testFile.yml");
+		
+		ArrayList<Recipe> recipeList = new ArrayList<>();
+		ArrayList<Recipe> recipeListFromFile;
+		recipeListFromFile = storage.read();
+		
+		assertNotNull(recipeListFromFile);
 
 	}
 

@@ -11,6 +11,14 @@ public class RecipeStorage {
 	
 	public RecipeStorage(String fileName) {
 		this.mFileName = fileName;
+		File file = new File(fileName);
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	
@@ -20,6 +28,11 @@ public class RecipeStorage {
 			YamlReader yamlReader = new YamlReader(new FileReader(mFileName));
 			
 			recipeList = (ArrayList<Recipe>)yamlReader.read();
+			
+			if (recipeList == null) {
+				recipeList = new ArrayList<Recipe>();
+				
+			}
 		}
 		catch(IOException e) {
 			StdOut.println("exception" + e);

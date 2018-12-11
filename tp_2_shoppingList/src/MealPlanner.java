@@ -1,11 +1,12 @@
 
 public class MealPlanner {
+	private static String fileName = "MyRecipes.yml";
 
 	public static void main(String[] args)
 	{
 		boolean done = false;
 		IShopperUI ui = new ShopperUI();
-		MealPrepper mealPrepper = new MealPrepper(ui, "MyRecipes.yml");
+		MealPrepper mealPrepper = new MealPrepper(ui, fileName);
 		
 		ui.displayGreeting();
 		
@@ -15,7 +16,7 @@ public class MealPlanner {
 			
 			switch (task) {
 			case 1:
-				MealCollector mealCollector = new MealCollector(ui);
+				MealCollector mealCollector = new MealCollector(ui, fileName);
 				mealCollector.addRecipe();
 				break;
 				

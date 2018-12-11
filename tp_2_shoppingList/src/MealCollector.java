@@ -5,16 +5,16 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class MealCollector
 {
-	private ArrayList<Recipe> recipeList;
+	private ArrayList<Recipe> recipeList = new ArrayList<>();
 	private IShopperUI ui;
 	private RecipeStorage rs;
 	private static String delim = "[-]+";
 
 	
-	public MealCollector(IShopperUI ui) {
+	public MealCollector(IShopperUI ui, String fileName) {
 		this.ui = ui;
 		
-		rs = new RecipeStorage("MyRecipes.yml");
+		rs = new RecipeStorage(fileName);
 		
 		recipeList = rs.read();
 		
@@ -66,7 +66,7 @@ public class MealCollector
 		}
 	}
 
-	private double getAmoutValue(String amountString) {
+	public double getAmoutValue(String amountString) {
 		int intValue = 0;
 		double returnValue;
 		if (amountString.contains(" ")) {
