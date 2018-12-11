@@ -47,7 +47,7 @@ public class MealPrepper
 			
 			weekRecipes[day-1] = dayRecipeNumbers;
 			dayRecipeNumbers = new ArrayList<>();
-			day = (day+1)==8 ? 1 : day+1; 
+			day = nextDay(day); 
 			
 			if (day == startingDayOfWeek) {
 				done = true;
@@ -55,6 +55,12 @@ public class MealPrepper
 			}
 		}
 
+	}
+
+
+	private int nextDay(int day) {
+		day = (day+1)==8 ? 1 : day+1;
+		return day;
 	}
 
 
@@ -92,7 +98,7 @@ public class MealPrepper
 			
 			writeRecipesForOneDay(shoppingList, printWriter, day);
 			
-			day = (day+1)==8 ? 1 : day+1; 
+			day = nextDay(day); 
 			
 			if (day == startingDayOfWeek) {
 				done = true;
