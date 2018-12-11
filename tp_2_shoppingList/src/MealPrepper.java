@@ -43,11 +43,7 @@ public class MealPrepper
 			ui.displayRecipeName(recipeList);
 			ui.requestRecipesForDay(day);
 			
-			int recipeNumber = ui.getRecipeNumber();
-			while (recipeNumber !=0) {
-				dayRecipeNumbers.add(recipeNumber-1);
-				recipeNumber = ui.getRecipeNumber();
-			}
+			addRecipesUntilDone(dayRecipeNumbers);
 			
 			weekRecipes[day-1] = dayRecipeNumbers;
 			dayRecipeNumbers = new ArrayList<>();
@@ -59,6 +55,15 @@ public class MealPrepper
 			}
 		}
 
+	}
+
+
+	private void addRecipesUntilDone(ArrayList<Integer> dayRecipeNumbers) {
+		int recipeNumber = ui.getRecipeNumber();
+		while (recipeNumber !=0) {
+			dayRecipeNumbers.add(recipeNumber-1);
+			recipeNumber = ui.getRecipeNumber();
+		}
 	}
 
 
@@ -85,16 +90,7 @@ public class MealPrepper
 		done = false;
 		while(!done) {
 			
-			ArrayList<Integer> dayList = weekRecipes[day-1];
-			
-			printDayHeader(printWriter, day);
-			for (Integer recipeIndex : dayList) {
-				Recipe recipe = recipeList.get(recipeIndex);
-				printWriter.println("   " + recipe.getName());
-				shoppingList.addAll(recipe.getIngredients());
-				
-			}
-			printWriter.println();
+			writeRecipesForOneDay(shoppingList, printWriter, day);
 			
 			day = (day+1)==8 ? 1 : day+1; 
 			
@@ -119,6 +115,22 @@ public class MealPrepper
 	    printWriter.close();
 
 		
+	}
+
+
+	private void writeRecipesForOneDay(ArrayList<Ingredient> shoppingList, 
+										PrintWriter printWriter, 
+										int day) {
+		ArrayList<Integer> dayList = weekRecipes[day-1];
+		
+		printDayHeader(printWriter, day);
+		for (Integer recipeIndex : dayList) {
+			Recipe recipe = recipeList.get(recipeIndex);
+			printWriter.println("   " + recipe.getName());
+			shoppingList.addAll(recipe.getIngredients());
+			
+		}
+		printWriter.println();
 	}
 	
 	private void printDayHeader(PrintWriter pw, int day) {
