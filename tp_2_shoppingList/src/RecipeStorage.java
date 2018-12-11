@@ -35,7 +35,7 @@ public class RecipeStorage {
 			}
 		}
 		catch(IOException e) {
-			StdOut.println("exception" + e);
+			e.printStackTrace();
 		}
 		
 		return recipeList;
