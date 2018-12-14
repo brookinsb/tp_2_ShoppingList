@@ -14,7 +14,8 @@ public class MealPlanner {
 			ui.displayMenuOptions();
 			int task = ui.getMenuOption();
 			
-			switch (task) {
+			switch (task) 
+			{
 			case 1:
 				MealCollector mealCollector = new MealCollector(ui, fileName);
 				mealCollector.addRecipe();
@@ -44,6 +45,7 @@ public class MealPlanner {
 			default:
 				ui.displayInvalidMenuOption();
 				break;
+			
 			}
 			
 		}
