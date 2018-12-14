@@ -269,6 +269,18 @@ public class MealPrepperTest {
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public void displayListCreatedMessage() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void displayNeedListMessage() {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 

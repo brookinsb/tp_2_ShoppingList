@@ -123,6 +123,20 @@ public class ShopperUI implements IShopperUI
 		StdOut.println("*******************");
 		StdOut.println("IO Exception");
 		
+	}
+
+	@Override
+	public void displayListCreatedMessage() {
+		StdOut.println("____________________\r\n");
+		StdOut.println("Shopping list created and in MealPlanner.txt file.");
+		
+	}
+
+	@Override
+	public void displayNeedListMessage() {
+		StdOut.println("____________________\r\n");
+		StdOut.println("A meal plan needs to be created in order to create the shopping list.");
+		
 	}	
 	
 	

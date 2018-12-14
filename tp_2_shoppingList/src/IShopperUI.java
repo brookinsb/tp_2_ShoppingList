@@ -29,4 +29,8 @@ public interface IShopperUI {
 	int getRecipeNumber();
 
 	void displayIOError();
+
+	void displayListCreatedMessage();
+
+	void displayNeedListMessage();
 }

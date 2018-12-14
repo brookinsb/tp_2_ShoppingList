@@ -118,7 +118,7 @@ public class MealPrepper
 	    printWriter.flush();
 	    printWriter.close();
 
-		
+		ui.displayListCreatedMessage();
 	}
 
 

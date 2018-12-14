@@ -34,7 +34,7 @@ public class MealPlanner {
 						ui.displayIOError();
 					}
 				} else {
-
+					ui.displayNeedListMessage();
 				}
 				break;
 				
