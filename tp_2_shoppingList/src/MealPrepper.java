@@ -22,8 +22,6 @@ public class MealPrepper
 		rs = new RecipeStorage(fileName);
 		
 		recipeList = rs.read();
-		
-	StdOut.println(recipeList.toString());
 	}
 
 
