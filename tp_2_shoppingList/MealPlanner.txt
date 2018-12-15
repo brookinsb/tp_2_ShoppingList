@@ -1,0 +1,56 @@
+*********************
+Sunday meals
+---------------------
+   Beans and Soup
+
+*********************
+Monday meals
+---------------------
+   Chicken Quesadillas
+
+*********************
+Tuesday meals
+---------------------
+   Spaghetti
+
+*********************
+Wednesday meals
+---------------------
+   Spaghetti
+
+*********************
+Thursday meals
+---------------------
+   Spaghetti
+
+*********************
+Friday meals
+---------------------
+   Chicken Quesadillas
+
+*********************
+Saturday meals
+---------------------
+   Beans and Soup
+
+
+
+
+------------------------------------
+Shopping List
+
+   Beans                     1.00, can
+   Beans                     1.00, can
+   Cheese                    1.00, cup
+   Cheese                    1.00, cup
+   Chicken                   1.00, bag
+   Chicken                   1.00, bag
+   Lettuce                   1.00, head
+   Lettuce                   1.00, head
+   Noodles                   1.00, pound
+   Noodles                   1.00, pound
+   Noodles                   1.00, pound
+   Soup                      1.00, can
+   Soup                      1.00, can
+   Tortillas                 1.00, tortilla
+   Tortillas                 1.00, tortilla
