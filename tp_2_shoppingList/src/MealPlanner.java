@@ -4,7 +4,8 @@ public class MealPlanner {
 
 	private static final int ADD_RECIPE = 1;
 	private static final int ADD_MEAL_PLAN = 2;
-	
+	private static final int CREATE_SHOPPING_LIST = 3;
+	private static final int DONE = 9;
 	
 	public static void main(String[] args)
 	
@@ -43,7 +44,7 @@ public class MealPlanner {
 				}
 				break;
 				
-			case 9:
+			case DONE:
 				done = true;
 				break;
 
